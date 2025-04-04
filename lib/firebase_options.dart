@@ -64,6 +64,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '893396521609',
     projectId: 'fir-cli-sample',
     storageBucket: 'fir-cli-sample.firebasestorage.app',
+    androidClientId: '893396521609-qv6bnnd38gtf8q348met9m3mdr0smrkf.apps.googleusercontent.com',
     iosClientId: '893396521609-g6k2rku20a3h14paaqmlsn1n43o4jflo.apps.googleusercontent.com',
     iosBundleId: 'com.example.appNew',
   );
@@ -74,6 +75,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '893396521609',
     projectId: 'fir-cli-sample',
     storageBucket: 'fir-cli-sample.firebasestorage.app',
+    androidClientId: '893396521609-qv6bnnd38gtf8q348met9m3mdr0smrkf.apps.googleusercontent.com',
     iosClientId: '893396521609-g6k2rku20a3h14paaqmlsn1n43o4jflo.apps.googleusercontent.com',
     iosBundleId: 'com.example.appNew',
   );
