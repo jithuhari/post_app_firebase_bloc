@@ -1,4 +1,16 @@
 part of 'sign_up_bloc.dart';
 
-@immutable
-sealed class SignUpEvent {}
+
+abstract class SignUpEvent extends Equatable{
+  @override
+  
+  List<Object?> get props => [];
+}
+
+class SignUpRequired extends SignUpEvent{
+  final MyUserModel user;
+  final String password;
+
+  SignUpRequired(this.user,this.password);
+
+}
