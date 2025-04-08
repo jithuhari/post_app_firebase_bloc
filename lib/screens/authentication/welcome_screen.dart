@@ -1,3 +1,5 @@
+import 'package:app_new/screens/authentication/sign_in_screen.dart';
+import 'package:app_new/screens/authentication/sign_up_screen.dart';
 import 'package:flutter/material.dart';
 
 class WelcomeScreen extends StatefulWidget {
@@ -33,7 +35,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> with TickerProviderStateM
                       fontWeight: FontWeight.bold,
                       fontSize: 18
                     ),),
-                    SizedBox(height: kToolbarHeight,),
+                    SizedBox(height: kToolbarHeight,), 
                 TabBar(
                   dividerColor: Colors.white,
                   unselectedLabelColor: Theme.of(context).colorScheme.onSurface.withOpacity(.5),
@@ -61,8 +63,8 @@ class _WelcomeScreenState extends State<WelcomeScreen> with TickerProviderStateM
                   child: TabBarView(
                     controller: tabController ,
                     children: [
-                    Text('hai'),
-                    Text('Hello')
+                    SignInScreen(), 
+                    SignUpScreen()
                   ]),
                 )
               ],
