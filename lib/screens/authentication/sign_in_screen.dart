@@ -1,6 +1,8 @@
+import 'package:app_new/blocs/sign_in_bloc/sign_in_bloc.dart';
 import 'package:app_new/components/strings.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../components/text_field.dart';
 
@@ -19,6 +21,7 @@ class _SignInScreenState extends State<SignInScreen> {
   String? _errorMsg;
   bool obscurePassword = true;
   IconData iconPassword =CupertinoIcons.eye_fill;
+  bool signinRequired = false;
 
   @override
   Widget build(BuildContext context) {
@@ -77,7 +80,42 @@ class _SignInScreenState extends State<SignInScreen> {
               }
             ),
           ),
-          SizedBox(height: 20,)
+          SizedBox(height: 20,),
+
+          !signinRequired? 
+          SizedBox(
+            width: MediaQuery.of(context).size.width*0.9,
+            height: 50,
+            child: TextButton(
+              style: TextButton.styleFrom(
+                elevation: 3, 
+                backgroundColor: Theme.of(context).colorScheme.primary,
+                foregroundColor: Colors.white,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(60)
+                )
+              ),
+              onPressed: (){
+                if (_formKey.currentState!.validate()) {
+                  context.read<SignInBloc>().add(SignInRequired(
+                    emailController.text, passwordController.text
+                  ));
+                  
+                }
+              }, child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 25.0,vertical: 5),
+                child: Text('Sign In',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 16,
+                  fontWeight: FontWeight.w600
+                ),
+                
+                ),
+              )),
+          )
+
+          : const CircularProgressIndicator()
         ],
       )
     );
